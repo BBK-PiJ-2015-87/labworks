@@ -1,4 +1,4 @@
 create table ORDERS (
-    ID int not null,
-    NAME varchar(100) not null
+    ID BIGSERIAL PRIMARY KEY,
+    DESCRIPTION VARCHAR(100) NOT NULL
 );
