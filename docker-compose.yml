@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  postgres:
+    image: "postgres:9.6.3"
+    ports:
+      - "5432:5432"
+    container_name: database.dev
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=laboratory
+  web:
+    image: "akka_app"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
